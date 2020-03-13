@@ -6,9 +6,11 @@ import Classification from './components/Classification/index'
 import Buy from './components/Buy/index'
 import Cart from './components/Cart/index'
 import Personal from './components/Personal/index'
+import './index.stylus'
+import './rem'
 class App extends Component {
   render () {
-    return <div>
+    return <div className="cls">
       <Router>
         <Switch>
           <Route path="/home" component={Home} />
