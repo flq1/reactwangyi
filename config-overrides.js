@@ -7,7 +7,7 @@
  * npm install customize-cra --save-dev 或者  yarn add customize-cra --dev
  * 所以新建config-overrides.js可以读取到该文件
  */
-const { override, fixBabelImports, addPostcssPlugins } = require('customize-cra');
+const { override, addPostcssPlugins } = require('customize-cra');
 
 /**
  * [关闭打包后的sourcemap description]
@@ -16,10 +16,7 @@ const { override, fixBabelImports, addPostcssPlugins } = require('customize-cra'
 // process.env.GENERATE_SOURCEMAP = "false";
 
 module.exports = override(
-  fixBabelImports('import', {
-    libraryName: 'antd-mobile',
-    style: 'css',
-  }),
+
   addPostcssPlugins([require('postcss-pxtorem')({
     rootValue: 1,
     propList: ['*']
